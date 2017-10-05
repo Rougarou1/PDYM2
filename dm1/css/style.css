@@ -1,0 +1,18 @@
+p {
+    font-weight: 900;
+}
+
+h3 {
+    text-align: center;
+}
+
+.btn-primary {
+    /*padding:14px;*/
+}
+
+/*.col-md-4:last-child {
+	padding-top: 203px;
+}*/
+.container {
+    margin-top: -15px;
+}
