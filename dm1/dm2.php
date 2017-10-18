@@ -83,8 +83,9 @@ switch ($d4) {
 
 /*-------------------------------------------------------*/
 
-$sigma_sk = ($R_a * (($l1 + $l2) / 2)) / (0.1 * pow($d, 3));
+$sigma_sk11 = ($R_a * (($l1 + $l2) / 2)) / (0.1 * pow($d, 3));
 /*---------------------------------------------------------*/
+$sigma_sk22 = ($R_a * (($l1 + $l2) / 2)) / (0.1 * pow($d3, 3));
 
 /*----------------Вычисление для 1-го колеса)------------*/
 $tao_kr11 = $T1 / (0.2 * pow($d, 3) * pow(10, -3));
@@ -98,7 +99,8 @@ $tao_kr12 = $T2 / (0.2 * pow($d3, 3) * pow(10, -3));
 $sigma_minus_1 = 0.55 * sigma_b;
 $tao_minus_1 = 0.6 * $sigma_minus_1;
 $K_sigma_d = (1 / K_nu) * ((K_sigma / K_sigma_b) * (K_f + 1));
-$P_sigma_1 = $sigma_minus_1 / ($K_sigma_d * $sigma_sk);
+$P_sigma_1 = $sigma_minus_1 / ($K_sigma_d * $sigma_sk11);
+$P_sigma_2 = $sigma_minus_1 / ($K_sigma_d * $sigma_sk22);
 /*-------------------------------------------------------*/
 
 /*----------------Вычисление для 1-го колеса)------------*/
@@ -154,7 +156,7 @@ if ($P12 >= P_tabl) {
             <pre>F_r1 = <?= $F_r1 ?></pre>
             <pre>F_r2 = <?= $F_r2; ?> </pre>
             <pre>R_a= <?= $R_a; ?> </pre>
-            <pre>sigma_sk = <?= $sigma_sk; ?> </pre>
+            <pre>sigma_sk = <?= $sigma_sk11; ?> </pre>
             <pre>tao_kr11= <?= $tao_kr11 ?></pre>
             <pre>sigma_minus_1= <?= $sigma_minus_1 ?></pre>
             <pre>tao_minus_1= <?= $tao_minus_1 ?></pre>
@@ -171,12 +173,12 @@ if ($P12 >= P_tabl) {
             <pre>F_r1 = <?= $F_r1 ?></pre>
             <pre>F_r2 = <?= $F_r2; ?> </pre>
             <pre>R_a= <?= $R_a; ?> </pre>
-            <pre>sigma_sk = <?= $sigma_sk; ?> </pre>
+            <pre>sigma_sk = <?= $sigma_sk22; ?> </pre>
             <pre>tao_kr12= <?= $tao_kr12 ?></pre>
             <pre>sigma_minus_1= <?= $sigma_minus_1 ?></pre>
             <pre>tao_minus_1= <?= $tao_minus_1 ?></pre>
             <pre>K_sigma_d= <?= $K_sigma_d ?></pre>
-            <pre>P_sigma_1= <?= $P_sigma_1 ?></pre>
+            <pre>P_sigma_2= <?= $P_sigma_2 ?></pre>
             <pre>P_tao_12= <?= $P_tao_12 ?></pre>
             <pre>P_12= <?= $P12 ?></pre>
             <pre>Результат:<?= $result2 ?></pre>
