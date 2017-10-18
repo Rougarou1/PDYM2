@@ -30,56 +30,57 @@ $R_a = pow(((pow($F_r1, 2)) + (pow($F_r2, 2))), 1 / 2);
 /*----------------ПРОВЕРКА ДИАМЕТРОВ для 2-х колес------------*/
 $d2 = 130 * pow(($P / $n1), 0.333333);
 $d4 = 130 * pow(($P / $n2), 0.333333);
-    if ($d2 >= 20 || $d2 < 30){
+switch ($d2) {
+    case ($d2 >= 20 && $d2 < 30):
         $d = 25;
-    }
-    elseif ($d2 >= 30 || $d2 < 40){
+        break;
+    case ($d2 >= 30 && $d2 < 40):
         $d = 35;
-    }
-    elseif ($d2 >= 40 || $d2 < 50){
+        break;
+    case ($d2 >= 40 && $d2 < 50):
         $d = 45;
-    }
-    elseif ($d2 >= 50 || $d2 < 60){
+        break;
+    case ($d2 >= 50 && $d2 < 60):
         $d = 55;
-    }
-    elseif ($d2 >= 60 || $d2 < 70){
+        break;
+    case ($d2 >= 60 && $d2 < 70):
         $d = 65;
-    }
-    elseif ($d2 >= 70 || $d2 < 80){
+        break;
+    case ($d2 >= 70 && $d2 < 80):
         $d = 75;
-    }
-    elseif ($d2 >= 80 || $d2 < 90){
+        break;
+    case ($d2 >= 80 && $d2 < 90):
         $d = 85;
-    }
-    elseif ($d2 >= 90 || $d2 < 100){
+        break;
+    case ($d2 >= 90 && $d2 < 100):
         $d = 95;
-    }
+        break;
+}
 
-
-    if ($d4 >= 22 ||  $d4 < 30){
-        $d3 = 25;
-    }
-    elseif ($d4 >= 30 ||  $d4 < 40){
+switch ($d4) {
+    case ($d4 >= 30 && $d4 < 40):
         $d3 = 35;
-    }
-    elseif ($d4 >= 40 ||  $d4 < 50){
+        break;
+    case ($d4 >= 40 && $d4 < 50):
         $d3 = 45;
-    }
-    elseif ($d4 >= 50 ||  $d4 < 60){
+        break;
+    case ($d4 >= 50 && $d4 < 60):
         $d3 = 55;
-    }
-    elseif ($d4 >= 60 ||  $d4 < 70){
+        break;
+    case ($d4 >= 60 && $d4 < 70):
         $d3 = 65;
-    }
-    elseif ($d4 >= 70 ||  $d4 < 80){
+        break;
+    case ($d4 >= 70 && $d4 < 80):
         $d3 = 75;
-    }
-    elseif ($d4 >= 80 ||  $d4 < 90){
+        break;
+    case ($d4 >= 80 && $d4 < 90):
         $d3 = 85;
-    }
-    elseif ($d4 >= 90 ||  $d4 < 100){
+        break;
+    case ($d4 >= 90 && $d4 < 100):
         $d3 = 95;
-    }
+        break;
+}
+
 /*-------------------------------------------------------*/
 
 $sigma_sk = ($R_a * (($l1 + $l2) / 2)) / (0.1 * pow($d, 3));
@@ -184,5 +185,5 @@ if ($P12 >= P_tabl) {
 </div>
 <script src="http://test/dm1/js/jquery.min.js"></script>
 <script src="http://test/dm1/js/bootstrap.min.js"></script>
-</body>
+</body> 
 </html>
